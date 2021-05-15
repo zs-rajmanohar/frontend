@@ -3,21 +3,21 @@ pipeline {
 
   stages {
 
-     stage('download dependencies') {
-        steps {
-          sh '''
-            npm install
-          '''
-        }
-     }
+    stage('download dependencies') {
+      steps {
+        sh '''
+          npm install
+        '''
+      }
+    }
 
-     stage('build the project') {
-        steps {
-          sh '''
-            nm run build
-          '''
-        }
-     }
+    stage('build the project') {
+      steps {
+        sh '''
+          npm run build
+        '''
+      }
+    }
 
     stage('prepare artifacts') {
       steps {
@@ -36,3 +36,4 @@ pipeline {
     }
   }
 }
+
