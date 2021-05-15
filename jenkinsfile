@@ -19,22 +19,22 @@ pipeline {
       }
     }
 
-    stage('prepare artifacts') {
-      steps {
-        sh '''
-          zip -r frontend.zip *
-        '''
-      }
-    }
-
-    stage('upload artifacts') {
-      steps {
-        sh '''
-          curl -v -u admin:admin123 --upload-file frontend.zip http://localhost:8081/repositories/frontend/frontend.zip
-        '''
-      }
-    }
-  }
-}
+//     stage('prepare artifacts') {
+//       steps {
+//         sh '''
+//           zip -r frontend.zip *
+//         '''
+//       }
+//     }
+//
+//     stage('upload artifacts') {
+//       steps {
+//         sh '''
+//           curl -v -u admin:admin123 --upload-file frontend.zip http://localhost:8081/repositories/frontend/frontend.zip
+//         '''
+//       }
+//     }
+//   }
+// }
 
 
