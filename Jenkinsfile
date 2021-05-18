@@ -28,16 +28,16 @@ pipeline {
         '''
       }
     }
+
+
+    stage('upload artifacts') {
+      steps {
+        sh '''
+          curl -v -u admin:admin123 --upload-file frontend.zip http://172.31.3.71:8081/repository/frontend/frontend.zip
+        '''
+      }
+    }
   }
 }
-//     stage('upload artifacts') {
-//       steps {
-//         sh '''
-//           curl -v -u admin:admin123 --upload-file frontend.zip http://localhost:8081/repositories/frontend/frontend.zip
-//         '''
-//       }
-//     }
-//   }
-// }
 
 
