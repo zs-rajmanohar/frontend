@@ -20,8 +20,7 @@ pipeline {
         '''
       }
     }
-  }
-}
+
     stage('prepare artifacts') {
       steps {
         sh '''
@@ -29,7 +28,8 @@ pipeline {
         '''
       }
     }
-
+  }
+}
 //     stage('upload artifacts') {
 //       steps {
 //         sh '''
