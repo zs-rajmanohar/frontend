@@ -22,14 +22,14 @@ pipeline {
     }
   }
 }
-//     stage('prepare artifacts') {
-//       steps {
-//         sh '''
-//           zip -r frontend.zip *
-//         '''
-//       }
-//     }
-//
+    stage('prepare artifacts') {
+      steps {
+        sh '''
+          zip -r frontend.zip *
+        '''
+      }
+    }
+
 //     stage('upload artifacts') {
 //       steps {
 //         sh '''
