@@ -1,7 +1,7 @@
 @Library('todoapp') _
 
 todoapp (
-  COMPONENT         : 'frontend'
+  COMPONENT         : 'frontend',
   NEXUS_IP = '172.31.3.71'
 )
 //   PROJECT_NAME      : 'TodoApp',
