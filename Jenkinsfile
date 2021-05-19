@@ -1,5 +1,5 @@
-@Library( 'todoapp' )
-todoapp( "frontend" )
+@Library('todoapp')
+todoapp("frontend")
 todoapp (
  COMPONENT         : 'frontend',
 //   PROJECT_NAME      : 'TodoApp',
