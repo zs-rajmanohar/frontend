@@ -1,8 +1,7 @@
 @Library('todoapp') _
 
 todoapp (
-  COMPONENT    : 'frontend',
-  PROJECT_NAME      : 'TodoApp'
+  COMPONENT    : 'frontend'
 )
 //   SLAVE_LABEL       : 'agent1',
 //   SKIP_NEXUS_UPLOAD : 'false'
