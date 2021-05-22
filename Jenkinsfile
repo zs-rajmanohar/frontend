@@ -2,7 +2,7 @@
 
 todoapp (
   COMPONENT          : 'frontend',
-  APP_TYPE           :  'nginx'
+  APP_TYPE           :  'nginx',
   SKIP_NEXUS_UPLOAD  :  false
 )
 
