@@ -1,3 +1,3 @@
-new version released - version- 11.5
+new version released - version- 11.6
 
 
