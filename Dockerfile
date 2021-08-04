@@ -1,7 +1,5 @@
 FROM        ubuntu
-RUN         apt install nginx
-RUN         apt install npm
-RUN         apt  install node-saas
+RUN         apt install nginx && apt install npm && apt  install node-saas
 RUN         mkdir -p /var/www/html
 COPY        . /var/www/html/
 RUN         npm install && npm run build
