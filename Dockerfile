@@ -11,4 +11,4 @@ RUN         npm install
 RUN         npm run build
 COPY        todo-docker.conf /etc/nginx/sites-enabled/default.conf
 COPY        nginx.conf  /etc/nginx/nginx.conf
-CMD         ["nginx", "-g", "daemon off;"]
+# CMD         ["nginx", "-g", "daemon off;"]
