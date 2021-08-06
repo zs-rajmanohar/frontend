@@ -13,6 +13,7 @@
 # # COPY        nginx.conf  /etc/nginx/nginx.conf
 # # CMD         ["nginx", "-g", "daemon off;"]
 
+
 FROM    nginx as build
 RUN     apt-get update -y && apt-get install git -y
 RUN     git clone https://github.com/zs-rajmanohar/frontend.git
