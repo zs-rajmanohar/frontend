@@ -24,7 +24,7 @@ WORKDIR /var/www/html/
 FROM    node
 COPY    --from=build /var/www/html/. /var/www/html/frontend
 WORKDIR /var/www/html/frontend
-RUN     apt-get install node-sass -y
+RUN     apt-get install node-node-sass -y
 RUN     npm install
 RUN     npm run build
 COPY    todo-docker.conf /etc/nginx/sites-enabled/default.conf
