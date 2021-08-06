@@ -2,7 +2,7 @@
 FROM        nginx
 # RUN         apt-get update -y && apt-get install nginx -y
 # CMD         ["nginx", "-g", "daemon off;"]
-RUN         apt-get install npm -y
+RUN         apt-get update -y && apt-get install npm -y
 RUN         mkdir -p /var/www/html
 COPY        . /var/www/html/
 WORKDIR     /var/www/html/
