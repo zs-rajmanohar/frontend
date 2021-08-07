@@ -37,6 +37,7 @@ CMD         ["nginx","-g","daemon off;"]
 FROM        node as builder
 COPY        --from=build /var/www/html/. /var/www/html/
 WORKDIR     /var/www/html
+RUN         npm install
 RUN         npm install node-sass
 # RUN         npm install
 RUN         npm run build
