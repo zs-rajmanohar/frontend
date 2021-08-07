@@ -34,7 +34,7 @@ RUN         mkdir -p /var/www/html
 COPY        . /var/www/html/
 CMD         ["nginx","-g","daemon off;"]
 
-FROM        node as builder
+FROM        npmjs/npm-docker-baseline as builder
 COPY        --from=build /var/www/html/. /var/www/html/
 WORKDIR     /var/www/html
 RUN         npm install
