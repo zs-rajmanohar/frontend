@@ -24,3 +24,4 @@ RUN         npm install node-sass
 RUN         npm run build
 COPY        todo-docker.conf /etc/nginx/sites-available/default
 CMD         ["nginx","-g","daemon off;"]
+
