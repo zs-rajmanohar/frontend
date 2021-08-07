@@ -24,6 +24,7 @@ COPY        . /var/www/html
 WORKDIR     /var/www/html
 RUN         npm install node-sass
 RUN         npm run build
-COPY        todo-docker.conf /etc/nginx/sites-available/default
+RUN         rm -rf /etc/nginx/sites-available/default && rm -rf /etc/nginx/sites-enabled/default
+COPY        todo-docker.conf /etc/nginx/sites-enabled/default.conf
 CMD         ["nginx","-g","daemon off;"]
 
