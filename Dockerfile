@@ -13,18 +13,14 @@
 # # COPY        nginx.conf  /etc/nginx/nginx.conf
 # # CMD         ["nginx", "-g", "daemon off;"]
 
-
-FROM    nginx as build
-RUN     apt-get update -y && apt-get install git -y
-RUN     git clone https://github.com/zs-rajmanohar/frontend.git
-RUN     mkdir -p /var/www/html
-COPY    . /var/www/html/
-WORKDIR /var/www/html/
-
-FROM    node
-COPY    --from=build /var/www/html/. /var/www/html/frontend
-WORKDIR /var/www/html/frontend
-RUN     npm install node-sass
-RUN     npm install
-RUN     npm run build
-COPY    todo-docker.conf /etc/nginx/sites-enabled/default.conf
+FROM        ubuntu
+RUN         apt update -y  && apt install nginx -y
+RUN         apt install nodejs -y
+RUN         apt install npm -y
+RUN         mkdir -p /var/www/html
+COPY        . /var/www/html
+WORKDIR     /var/www/html
+RUN         npm install node-sass
+RUN         npm run build
+COPY        todo-docker.conf /etc/nginx/sites-available/default
+CMD         ["nginx","-g","daemon off;"]
