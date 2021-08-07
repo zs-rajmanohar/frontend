@@ -14,6 +14,7 @@
 # # CMD         ["nginx", "-g", "daemon off;"]
 
 
+
 FROM        ubuntu
 RUN         apt update -y  && apt install nginx -y
 RUN         apt install nodejs -y
