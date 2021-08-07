@@ -45,6 +45,5 @@ RUN         npm run build
 FROM        builder
 COPY        --from=builder /var/www/html/. /var/www/html/
 WORKDIR     /var/www/html
-RUN         rm -rf /etc/nginx/sites-available/default && rm -rf /etc/nginx/sites-enabled/default
 COPY        todo-docker.conf /etc/nginx/sites-enabled/default.conf
 
