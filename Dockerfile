@@ -29,20 +29,19 @@
 # CMD         ["nginx","-g","daemon off;"]
 
 
-FROM        nginx as build
+
+
+
+FROM        node:14 as builder
 RUN         mkdir -p /var/www/html
 COPY        . /var/www/html/
-CMD         ["nginx","-g","daemon off;"]
-
-FROM        iojs as builder
-COPY        --from=build /var/www/html/. /var/www/html/
 WORKDIR     /var/www/html
-RUN         npm install
-RUN         npm install node-sass
 # RUN         npm install
+RUN         npm install node-sass
 RUN         npm run build
 
-FROM        builder
+FROM        nginx
+RUN         mkdir -p /var/www/html
 COPY        --from=builder /var/www/html/. /var/www/html/
 WORKDIR     /var/www/html
 COPY        todo-docker.conf /etc/nginx/sites-enabled/default.conf
