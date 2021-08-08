@@ -44,5 +44,7 @@ FROM        nginx
 RUN         mkdir -p /var/www/html
 COPY        --from=builder /var/www/html/. /var/www/html/
 WORKDIR     /var/www/html
-COPY        todo-docker.conf /etc/nginx/sites-enabled/default.conf
-
+# COPY        todo-docker.conf /etc/nginx/sites-enabled/default.conf
+RUN         rm -r /etc/nginx/sites-enabled/default.conf
+COPY        todo-docker.conf /etc/nginx/conf.d/default.conf
+COPY        nginx.conf  /etc/nginx/nginx.conf
